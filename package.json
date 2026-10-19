@@ -10,6 +10,8 @@
     "start": "node src/server.js",
     "seed": "node src/seed.js",
     "seed:demo": "node src/seedDemo.js",
+    "seed:products": "node src/seedProducts.js",
+    "create:client-user": "node src/createClientUser.js",
     "test": "cross-env NODE_ENV=test node --test --test-concurrency=1 \"test/*.test.js\""
   },
   "keywords": [

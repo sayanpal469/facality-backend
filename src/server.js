@@ -3,6 +3,7 @@ import app from './app.js'
 import { env } from './config/env.js'
 import { connectDatabase, disconnectDatabase } from './config/db.js'
 import { seedDatabase } from './seed.js'
+import { seedProducts } from './seedProducts.js'
 import { runMigrations } from './utils/migrations.js'
 import { startScheduler, stopScheduler } from './services/scheduler.service.js'
 
@@ -12,7 +13,8 @@ async function main() {
   if (env.useMemoryDb) {
     // A fresh in-memory Mongo instance starts empty every time — seed it
     // automatically so `npm run dev:memory` is immediately usable.
-    await seedDatabase()
+    const { enterprise } = await seedDatabase()
+    await seedProducts({ enterpriseId: enterprise._id })
   }
   await runMigrations()
   startScheduler()

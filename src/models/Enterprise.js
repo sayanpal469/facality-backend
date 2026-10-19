@@ -27,6 +27,18 @@ const enterpriseSchema = new Schema(
       high: { responseHours: { type: Number, default: 4 }, resolutionHours: { type: Number, default: 24 } },
       normal: { responseHours: { type: Number, default: 8 }, resolutionHours: { type: Number, default: 72 } },
     },
+    // Shop & product delivery (Settings → Store & Delivery). Transport for
+    // products is charged to the client by road distance from the hub/store.
+    commerce: {
+      hubAddress: { type: String, trim: true, default: '' },
+      hubLatitude: { type: Number, default: null },
+      hubLongitude: { type: Number, default: null },
+      transportBaseCharge: { type: Number, min: 0, default: 0 }, // flat part of every delivery
+      transportFreeKm: { type: Number, min: 0, default: 5 }, // no per-km charge within this distance
+      transportRatePerKm: { type: Number, min: 0, default: 12 }, // beyond the free distance
+      defaultTransportCharge: { type: Number, min: 0, default: 150 }, // when the site/hub has no GPS location
+      freeTransportAbove: { type: Number, min: 0, default: 0 }, // product value that waives transport (0 = never)
+    },
     notificationPreferences: {
       type: Map,
       of: new Schema({ email: Boolean, push: Boolean }, { _id: false }),

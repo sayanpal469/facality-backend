@@ -8,6 +8,7 @@ import {
   createCategorySchema,
   createServiceTypeSchema,
   updateCategorySchema,
+  updateServicePackageSchema,
   updateServiceTypeSchema,
 } from '../validators/service.validator.js'
 
@@ -21,5 +22,9 @@ router.patch('/categories/:id', requireRole(ROLES.ADMIN), validate(updateCategor
 
 router.post('/types', requireRole(ROLES.ADMIN), validate(createServiceTypeSchema), serviceController.createServiceType)
 router.patch('/types/:id', requireRole(ROLES.ADMIN), validate(updateServiceTypeSchema), serviceController.updateServiceType)
+
+// Service package: service charge + default products (any signed-in user can view; the client app shows it).
+router.get('/types/:id/package', serviceController.getServicePackage)
+router.put('/types/:id/package', requireRole(ROLES.ADMIN), validate(updateServicePackageSchema), serviceController.updateServicePackage)
 
 export default router

@@ -82,6 +82,8 @@ export const ACTIVITY_ENTITY_TYPE = Object.freeze({
   ASSET: 'Asset',
   CONTRACT: 'Contract',
   PM_SCHEDULE: 'Maintenance Schedule',
+  PRODUCT: 'Product',
+  PRODUCT_ORDER: 'Product Order',
 })
 
 export const NOTIFICATION_KIND = Object.freeze({
@@ -92,6 +94,7 @@ export const NOTIFICATION_KIND = Object.freeze({
   CLIENT: 'client',
   WORK_ORDER: 'work_order', // client-app facing
   SITE_VISIT: 'site_visit', // client-app facing
+  ORDER: 'order', // client-app facing — product shop orders
 })
 
 // Finer-grained than `kind` — lets the mobile apps pick the right icon/copy
@@ -116,4 +119,21 @@ export const NOTIFICATION_EVENT = Object.freeze({
   SLA_BREACHED: 'sla_breached',
   PM_WORK_CREATED: 'pm_work_created',
   CONTRACT_EXPIRING: 'contract_expiring',
+  MATERIALS_APPROVAL: 'materials_approval', // products bundled into a work order await the client's approval
+  MATERIALS_RESPONDED: 'materials_responded',
+  ORDER_PLACED: 'order_placed',
+  ORDER_STATUS: 'order_status',
 })
+
+export const PRODUCT_ORDER_STATUS = Object.freeze({
+  PLACED: 'placed',
+  CONFIRMED: 'confirmed',
+  DISPATCHED: 'dispatched',
+  DELIVERED: 'delivered',
+  CANCELLED: 'cancelled',
+})
+export const PRODUCT_ORDER_STATUS_VALUES = Object.values(PRODUCT_ORDER_STATUS)
+
+// The client's answer to a product an admin bundled into a work order.
+export const MATERIAL_STATUS = Object.freeze({ PENDING: 'pending', APPROVED: 'approved', REJECTED: 'rejected' })
+export const MATERIAL_STATUS_VALUES = Object.values(MATERIAL_STATUS)

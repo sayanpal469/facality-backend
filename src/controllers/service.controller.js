@@ -4,6 +4,8 @@ import { sendResponse } from '../utils/ApiResponse.js'
 import { logActivity } from '../utils/activityLogger.js'
 import { ServiceCategory } from '../models/ServiceCategory.js'
 import { ServiceType } from '../models/ServiceType.js'
+import { Product } from '../models/Product.js'
+import { round2 } from '../utils/pricing.js'
 import { ACTIVITY_ENTITY_TYPE } from '../constants/enums.js'
 
 export const listServiceCategories = asyncHandler(async function listServiceCategories(req, res) {
@@ -15,6 +17,17 @@ export const listServiceCategories = asyncHandler(async function listServiceCate
     const key = String(t.categoryId)
     if (!typesByCategory.has(key)) typesByCategory.set(key, [])
     typesByCategory.get(key).push(t)
+  }
+
+  // Package totals at today's catalogue prices, for the services list.
+  const productIds = [...new Set(types.flatMap((t) => (t.includedProducts ?? []).map((i) => String(i.productId))))]
+  const prices = new Map((await Product.find({ _id: { $in: productIds }, status: 'active' }).select('price').lean()).map((p) => [String(p._id), p.price]))
+  for (const t of types) {
+    const productsTotal = (t.includedProducts ?? []).reduce((n, i) => n + (prices.get(String(i.productId)) ?? 0) * i.quantity, 0)
+    t.serviceCharge = t.serviceCharge ?? 0
+    t.includedCount = (t.includedProducts ?? []).length
+    t.packageTotal = round2(t.serviceCharge + productsTotal)
+    delete t.includedProducts
   }
 
   const withTypes = categories.map((c) => ({ ...c, types: typesByCategory.get(String(c._id)) || [] }))
@@ -91,4 +104,62 @@ export const updateServiceType = asyncHandler(async function updateServiceType(r
   })
 
   return sendResponse(res, 200, type, 'Service type updated')
+})
+
+/** A service's package priced at today's catalogue prices. */
+async function packageView(type) {
+  await type.populate({ path: 'includedProducts.productId', select: 'sku name unit packSize price mrp imageUrl stock status category' })
+  const items = type.includedProducts
+    .filter((i) => i.productId) // product since deleted
+    .map((i) => ({
+      product: i.productId,
+      quantity: i.quantity,
+      amount: i.productId.status === 'active' ? round2(i.productId.price * i.quantity) : 0,
+    }))
+  const productsTotal = round2(items.reduce((n, i) => n + i.amount, 0))
+  return {
+    serviceId: type._id,
+    name: type.name,
+    status: type.status,
+    description: type.description ?? '',
+    serviceCharge: type.serviceCharge ?? 0,
+    items,
+    productsTotal,
+    total: round2((type.serviceCharge ?? 0) + productsTotal),
+  }
+}
+
+export const getServicePackage = asyncHandler(async function getServicePackage(req, res) {
+  const type = await ServiceType.findOne({ _id: req.params.id, enterpriseId: req.user.enterpriseId })
+  if (!type) throw ApiError.notFound('Service type not found')
+  return sendResponse(res, 200, await packageView(type))
+})
+
+export const updateServicePackage = asyncHandler(async function updateServicePackage(req, res) {
+  const type = await ServiceType.findOne({ _id: req.params.id, enterpriseId: req.user.enterpriseId })
+  if (!type) throw ApiError.notFound('Service type not found')
+
+  const ids = req.body.items.map((i) => i.productId)
+  if (new Set(ids).size !== ids.length) throw ApiError.badRequest('Each product can only be added once — change its quantity instead')
+  const found = await Product.countDocuments({ _id: { $in: ids }, enterpriseId: req.user.enterpriseId })
+  if (found !== ids.length) throw ApiError.badRequest('One or more products were not found')
+
+  type.serviceCharge = req.body.serviceCharge
+  if (req.body.description !== undefined) type.description = req.body.description
+  type.includedProducts = req.body.items
+  await type.save()
+
+  // A product bundled into a service is, by definition, used for it — tag it so the shop's service filter finds it.
+  if (ids.length) await Product.updateMany({ _id: { $in: ids } }, { $addToSet: { serviceIds: type._id } })
+
+  await logActivity({
+    enterpriseId: req.user.enterpriseId,
+    actorId: req.user._id,
+    action: 'updated service package',
+    entityType: ACTIVITY_ENTITY_TYPE.SERVICE,
+    entityId: type._id,
+    entityLabel: type.name,
+  })
+
+  return sendResponse(res, 200, await packageView(type), 'Service package saved')
 })

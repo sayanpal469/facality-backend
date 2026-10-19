@@ -39,3 +39,20 @@ export const updateOperationsSchema = z.object({
     .optional(),
   sla: z.object({ urgent: slaTarget, high: slaTarget, normal: slaTarget }).partial().optional(),
 })
+
+export const updateCommerceSchema = z
+  .object({
+    hubAddress: z.string().trim().max(300),
+    hubLatitude: z.number().min(-90).max(90).nullable(),
+    hubLongitude: z.number().min(-180).max(180).nullable(),
+    transportBaseCharge: z.number().min(0).max(1e6),
+    transportFreeKm: z.number().min(0).max(1000),
+    transportRatePerKm: z.number().min(0).max(1e4),
+    defaultTransportCharge: z.number().min(0).max(1e6),
+    freeTransportAbove: z.number().min(0).max(1e8),
+  })
+  .partial()
+  .refine((v) => (v.hubLatitude == null) === (v.hubLongitude == null), {
+    message: 'Set both latitude and longitude, or clear both',
+    path: ['hubLongitude'],
+  })

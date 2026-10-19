@@ -19,6 +19,7 @@ import attendanceRoutes from './attendance.routes.js'
 import assetRoutes from './asset.routes.js'
 import { contractRoutes, pmScheduleRoutes } from './contract.routes.js'
 import { invoiceRoutes, publicBillingRoutes, quotationRoutes } from './billing.routes.js'
+import { productOrderRoutes, productRoutes } from './product.routes.js'
 
 const router = Router()
 
@@ -46,6 +47,8 @@ router.use('/contracts', contractRoutes)
 router.use('/pm-schedules', pmScheduleRoutes)
 router.use('/quotations', quotationRoutes)
 router.use('/invoices', invoiceRoutes)
+router.use('/products', productRoutes)
+router.use('/product-orders', productOrderRoutes)
 router.use('/public', publicBillingRoutes)
 
 export default router

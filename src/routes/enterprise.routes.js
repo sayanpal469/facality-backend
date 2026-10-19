@@ -5,7 +5,7 @@ import { requireRole } from '../middleware/rbac.middleware.js'
 import { validate } from '../middleware/validate.middleware.js'
 import { uploadImage } from '../middleware/upload.middleware.js'
 import { ROLES } from '../constants/enums.js'
-import { notificationPrefsSchema, updateEnterpriseSchema, updateOperationsSchema } from '../validators/enterprise.validator.js'
+import { notificationPrefsSchema, updateCommerceSchema, updateEnterpriseSchema, updateOperationsSchema } from '../validators/enterprise.validator.js'
 
 const router = Router()
 
@@ -22,6 +22,7 @@ router.patch(
   enterpriseController.updateNotificationPreferences,
 )
 
+router.patch('/commerce', requireRole(ROLES.ADMIN), validate(updateCommerceSchema), enterpriseController.updateCommerce)
 router.patch('/operations', requireRole(ROLES.ADMIN), validate(updateOperationsSchema), enterpriseController.updateOperations)
 
 export default router

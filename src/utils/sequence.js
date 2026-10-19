@@ -10,6 +10,8 @@ const PREFIXES = {
   contract: { prefix: 'CT-', start: 1000 },
   invoice: { prefix: 'INV-', start: 10001 },
   quotation: { prefix: 'QT-', start: 2001 },
+  product: { prefix: 'PRD-', start: 1001 },
+  productOrder: { prefix: 'ORD-', start: 50001 },
 }
 
 /** Atomically reserves the next number for (entityKind, enterpriseId) and formats it, e.g. "WO-10245". */

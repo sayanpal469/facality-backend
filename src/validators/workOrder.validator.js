@@ -16,6 +16,9 @@ export const createWorkOrderSchema = z.object({
   dueDate: z.coerce.date(),
   fromComplaintId: objectId.optional(),
   assetId: objectId.optional(),
+  // Explicit pricing wins; otherwise applyServicePackage copies the service's package.
+  pricing: z.lazy(() => workOrderPricingSchema).optional(),
+  applyServicePackage: z.boolean().optional().default(false),
 })
 
 export const updateWorkOrderSchema = z.object({
@@ -53,3 +56,35 @@ export const listWorkOrdersQuerySchema = z.object({
   page: z.coerce.number().int().min(1).optional(),
   limit: z.coerce.number().int().min(1).max(1000).optional(),
 })
+
+// Service charge + bundled products + transport (see utils/pricing.js).
+export const workOrderPricingSchema = z.object({
+  serviceCharge: z.number().min(0).max(1e8),
+  items: z
+    .array(
+      z.object({
+        productId: objectId,
+        quantity: z.number().int().min(1, 'Quantity must be at least 1').max(10000),
+        unitPrice: z.number().min(0).max(1e8).optional(), // defaults to the catalogue price
+      }),
+    )
+    .max(50)
+    .default([]),
+  transportMode: z.enum(['auto', 'manual']).optional().default('auto'),
+  transportCharge: z.number().min(0).max(1e7).optional(), // required for manual mode
+})
+
+export const respondPricingSchema = z.object({
+  items: z
+    .array(
+      z.object({
+        itemId: objectId,
+        approvedQuantity: z.number().int().min(0).max(10000), // 0 = reject
+        note: z.string().trim().max(300).optional(),
+      }),
+    )
+    .min(1, 'Respond to at least one product')
+    .max(50),
+})
+
+export const workOrderInvoiceSchema = z.object({ dueDate: z.coerce.date() })

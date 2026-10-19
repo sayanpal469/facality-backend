@@ -6,10 +6,14 @@ import { logActivity } from '../utils/activityLogger.js'
 import { generateCode } from '../utils/sequence.js'
 import { assertAssetAtSite, linkAssetEvent } from './asset.controller.js'
 import { WorkOrder } from '../models/WorkOrder.js'
+import { ServiceType } from '../models/ServiceType.js'
+import { buildMaterialItems, effectiveQuantity, packageAsPricingInput, refreshPricing } from '../utils/pricing.js'
+import { createDraftInvoice } from '../utils/invoiceDraft.js'
 import { Complaint } from '../models/Complaint.js'
 import { adminUserIds, clientUserIds, notifyUsers, siteStaffUserIds } from '../utils/notifier.js'
 import {
   ACTIVITY_ENTITY_TYPE,
+  MATERIAL_STATUS,
   NOTIFICATION_EVENT,
   NOTIFICATION_KIND,
   ROLES,
@@ -83,6 +87,31 @@ function scopedWorkOrderFilter(req, extra = {}) {
   return filter
 }
 
+/** Copies admin pricing input onto the work order (keeping the client's answers where nothing changed). */
+async function applyPricingInput(req, workOrder, input) {
+  const items = await buildMaterialItems(req.user.enterpriseId, input.items, workOrder.pricing?.items ?? [])
+  const mode = input.transportMode ?? 'auto'
+  if (mode === 'manual' && input.transportCharge === undefined) throw ApiError.badRequest('Enter the transport charge, or switch transport to automatic')
+  if (!workOrder.pricing) workOrder.pricing = {}
+  workOrder.pricing.serviceCharge = input.serviceCharge
+  workOrder.pricing.items = items
+  workOrder.pricing.transportMode = mode
+  if (mode === 'manual') {
+    workOrder.pricing.manualTransportCharge = input.transportCharge
+    workOrder.pricing.distanceKm = null
+  }
+  await refreshPricing(workOrder)
+}
+
+async function notifyMaterialsApproval(req, workOrder) {
+  const pending = workOrder.pricing.items.filter((i) => i.status === MATERIAL_STATUS.PENDING).length
+  await notifyClient(req, workOrder, {
+    title: 'Products need your approval',
+    body: `${workOrder.code} · ${pending} product${pending === 1 ? '' : 's'} proposed — total ₹${workOrder.pricing.total.toLocaleString('en-IN')}`,
+    event: NOTIFICATION_EVENT.MATERIALS_APPROVAL,
+  })
+}
+
 function isOverdue(wo) {
   return wo.dueDate < new Date() && !WORK_ORDER_TERMINAL_STATUSES.includes(wo.status)
 }
@@ -95,14 +124,23 @@ export const createWorkOrder = asyncHandler(async function createWorkOrder(req, 
   }
   await assertAssetAtSite(req, assetId, req.body.siteId)
 
+  const { pricing: pricingInput, applyServicePackage, ...fields } = req.body
+  let pricing = pricingInput
+  if (!pricing && applyServicePackage) {
+    const serviceType = await ServiceType.findOne({ _id: fields.serviceId, enterpriseId: req.user.enterpriseId })
+    if (serviceType) pricing = await packageAsPricingInput(serviceType)
+  }
+
   const code = await generateCode('workOrder', req.user.enterpriseId)
-  const workOrder = await WorkOrder.create({
-    ...req.body,
+  const workOrder = new WorkOrder({
+    ...fields,
     assetId: assetId ?? null,
     code,
     enterpriseId: req.user.enterpriseId,
     statusHistory: [{ status: WORK_ORDER_STATUS.CREATED, progress: 0, actorId: req.user._id }],
   })
+  if (pricing) await applyPricingInput(req, workOrder, pricing)
+  await workOrder.save()
 
   await linkAssetEvent(req, assetId, {
     siteId: workOrder.siteId,
@@ -135,6 +173,7 @@ export const createWorkOrder = asyncHandler(async function createWorkOrder(req, 
     body: `${workOrder.code} · ${workOrder.title}`,
     event: NOTIFICATION_EVENT.WORK_CREATED,
   })
+  if (workOrder.pricing?.clientStatus === 'pending') await notifyMaterialsApproval(req, workOrder)
 
   return sendResponse(res, 201, workOrder, 'Work order created')
 })
@@ -408,4 +447,146 @@ export const addProgressUpdate = asyncHandler(async function addProgressUpdate(r
   }
 
   return sendResponse(res, 201, workOrder.updates.at(-1), 'Update added')
+})
+
+// ── Pricing: service charge + bundled products + transport ─────────────────
+
+// Once the work is closed or called off the price is final.
+const PRICING_LOCKED = [WORK_ORDER_STATUS.CLOSED, WORK_ORDER_STATUS.CANCELLED]
+
+/** Admin sets/replaces the job's price breakdown (prefilled from the service package in the panel). */
+export const setWorkOrderPricing = asyncHandler(async function setWorkOrderPricing(req, res) {
+  const workOrder = await WorkOrder.findOne({ _id: req.params.id, enterpriseId: req.user.enterpriseId })
+  if (!workOrder) throw ApiError.notFound('Work order not found')
+  if (PRICING_LOCKED.includes(workOrder.status)) throw ApiError.badRequest(`A ${workOrder.status} work order's pricing can't be changed`)
+  if (workOrder.pricing?.invoiceId) throw ApiError.badRequest('This work order has been invoiced — edit the invoice instead')
+
+  const pendingBefore = new Set((workOrder.pricing?.items ?? []).filter((i) => i.status === MATERIAL_STATUS.PENDING).map((i) => String(i._id)))
+  await applyPricingInput(req, workOrder, req.body)
+  await workOrder.save()
+
+  await logActivity({
+    enterpriseId: req.user.enterpriseId,
+    actorId: req.user._id,
+    action: `set pricing (₹${workOrder.pricing.total.toLocaleString('en-IN')})`,
+    entityType: ACTIVITY_ENTITY_TYPE.WORK_ORDER,
+    entityId: workOrder._id,
+    entityLabel: workOrder.title,
+  })
+
+  // Only ping the client when something new is waiting on them.
+  const newlyPending = workOrder.pricing.items.some((i) => i.status === MATERIAL_STATUS.PENDING && !pendingBefore.has(String(i._id)))
+  if (newlyPending) await notifyMaterialsApproval(req, workOrder)
+
+  return sendResponse(res, 200, workOrder, 'Pricing saved')
+})
+
+export const removeWorkOrderPricing = asyncHandler(async function removeWorkOrderPricing(req, res) {
+  const workOrder = await WorkOrder.findOne({ _id: req.params.id, enterpriseId: req.user.enterpriseId })
+  if (!workOrder) throw ApiError.notFound('Work order not found')
+  if (PRICING_LOCKED.includes(workOrder.status)) throw ApiError.badRequest(`A ${workOrder.status} work order's pricing can't be changed`)
+  if (workOrder.pricing?.invoiceId) throw ApiError.badRequest('This work order has been invoiced')
+  workOrder.pricing = null
+  await workOrder.save()
+  return sendResponse(res, 200, workOrder, 'Pricing removed')
+})
+
+/**
+ * Client-app facing: approve each bundled product in full, in part
+ * (approvedQuantity < proposed) or reject it (0). Answers can be changed
+ * until the work is completed.
+ */
+export const respondWorkOrderPricing = asyncHandler(async function respondWorkOrderPricing(req, res) {
+  const workOrder = await WorkOrder.findOne(scopedWorkOrderFilter(req, { _id: req.params.id }))
+  if (!workOrder) throw ApiError.notFound('Work order not found')
+  if (!workOrder.pricing?.items?.length) throw ApiError.badRequest('This work order has no products to approve')
+  if (WORK_ORDER_TERMINAL_STATUSES.includes(workOrder.status)) throw ApiError.badRequest('This work is already complete — product choices can no longer be changed')
+  if (workOrder.pricing.invoiceId) throw ApiError.badRequest('This work order has already been invoiced')
+
+  const now = new Date()
+  for (const answer of req.body.items) {
+    const item = workOrder.pricing.items.id(answer.itemId)
+    if (!item) throw ApiError.badRequest('One of the products is no longer on this work order — refresh and try again')
+    if (answer.approvedQuantity > item.quantity) throw ApiError.badRequest(`You can approve at most ${item.quantity} of "${item.name}"`)
+    item.approvedQuantity = answer.approvedQuantity
+    item.status = answer.approvedQuantity === 0 ? MATERIAL_STATUS.REJECTED : MATERIAL_STATUS.APPROVED
+    if (answer.note !== undefined) item.clientNote = answer.note
+    item.respondedAt = now
+  }
+  await refreshPricing(workOrder)
+  workOrder.pricing.respondedAt = now
+  workOrder.pricing.respondedBy = req.user._id
+  await workOrder.save()
+
+  const items = workOrder.pricing.items
+  const approved = items.filter((i) => i.status === MATERIAL_STATUS.APPROVED)
+  const partial = approved.filter((i) => i.approvedQuantity < i.quantity).length
+  const rejected = items.filter((i) => i.status === MATERIAL_STATUS.REJECTED).length
+  const summary = [`${approved.length} approved`, partial ? `${partial} reduced` : null, rejected ? `${rejected} rejected` : null].filter(Boolean).join(', ')
+
+  await logActivity({
+    enterpriseId: req.user.enterpriseId,
+    actorId: req.user._id,
+    action: `reviewed products (${summary})`,
+    entityType: ACTIVITY_ENTITY_TYPE.WORK_ORDER,
+    entityId: workOrder._id,
+    entityLabel: workOrder.title,
+  })
+
+  await notifyUsers({
+    enterpriseId: req.user.enterpriseId,
+    userIds: [...(await adminUserIds(req.user.enterpriseId)), ...(await siteStaffUserIds(workOrder.siteId))],
+    actorId: req.user._id,
+    title: 'Client reviewed products',
+    body: `${workOrder.code} · ${summary} — new total ₹${workOrder.pricing.total.toLocaleString('en-IN')}`,
+    kind: NOTIFICATION_KIND.CLIENT,
+    event: NOTIFICATION_EVENT.MATERIALS_RESPONDED,
+    linkEntityType: ACTIVITY_ENTITY_TYPE.WORK_ORDER,
+    linkEntityId: workOrder._id,
+  })
+
+  return sendResponse(res, 200, workOrder, 'Thanks — your choices were saved')
+})
+
+/** Draft invoice from the job's pricing: service charge, approved products, transport. */
+export const invoiceWorkOrder = asyncHandler(async function invoiceWorkOrder(req, res) {
+  const workOrder = await WorkOrder.findOne({ _id: req.params.id, enterpriseId: req.user.enterpriseId }).populate('serviceId', 'name')
+  if (!workOrder) throw ApiError.notFound('Work order not found')
+  const p = workOrder.pricing
+  if (!p) throw ApiError.badRequest('Add pricing to this work order first')
+  if (p.invoiceId) throw ApiError.conflict('This work order already has an invoice')
+  if (workOrder.status === WORK_ORDER_STATUS.CANCELLED) throw ApiError.badRequest("A cancelled work order can't be invoiced")
+  if (p.clientStatus === 'pending') throw ApiError.badRequest('The client has not reviewed the proposed products yet')
+
+  const lines = []
+  if (p.serviceCharge > 0) lines.push({ description: `Service charge — ${workOrder.serviceId?.name ?? 'service'}`, quantity: 1, unit: 'job', rate: p.serviceCharge, taxPercent: 0 })
+  for (const item of p.items) {
+    const qty = effectiveQuantity(item)
+    if (qty > 0) lines.push({ description: `${item.name}${item.packSize ? ` (${item.packSize})` : ''}`, quantity: qty, unit: item.unit, rate: item.unitPrice, taxPercent: 0 })
+  }
+  if (p.transportCharge > 0) lines.push({ description: `Transport for products${p.distanceKm != null ? ` (~${p.distanceKm} km)` : ''}`, quantity: 1, unit: 'trip', rate: p.transportCharge, taxPercent: 0 })
+  if (!lines.length) throw ApiError.badRequest('Nothing to invoice — the total is zero')
+
+  const invoice = await createDraftInvoice(req, {
+    clientId: workOrder.clientId,
+    siteId: workOrder.siteId,
+    title: `${workOrder.code} · ${workOrder.title}`,
+    items: lines,
+    dueDate: req.body.dueDate,
+    notes: 'Prices are inclusive of GST.',
+    workOrderIds: [workOrder._id],
+  })
+  p.invoiceId = invoice._id
+  await workOrder.save()
+
+  await logActivity({
+    enterpriseId: req.user.enterpriseId,
+    actorId: req.user._id,
+    action: `invoiced as ${invoice.code}`,
+    entityType: ACTIVITY_ENTITY_TYPE.WORK_ORDER,
+    entityId: workOrder._id,
+    entityLabel: workOrder.title,
+  })
+
+  return sendResponse(res, 201, invoice, 'Draft invoice created')
 })

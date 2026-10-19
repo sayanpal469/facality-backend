@@ -15,7 +15,10 @@ import {
   listWorkOrdersQuerySchema,
   overrideStatusSchema,
   reassignWorkOrderSchema,
+  respondPricingSchema,
   updateWorkOrderSchema,
+  workOrderInvoiceSchema,
+  workOrderPricingSchema,
 } from '../validators/workOrder.validator.js'
 
 const router = Router()
@@ -40,6 +43,12 @@ router.patch(
 )
 // Client-app facing: the client signs off on verified work.
 router.patch('/:id/client-approve', requireRole(ROLES.USER), validate(clientApproveSchema), workOrderController.clientApproveWorkOrder)
+
+// Pricing: admin proposes service charge + products + transport; the client approves, reduces or rejects products.
+router.put('/:id/pricing', requireRole(ROLES.ADMIN), validate(workOrderPricingSchema), workOrderController.setWorkOrderPricing)
+router.delete('/:id/pricing', requireRole(ROLES.ADMIN), workOrderController.removeWorkOrderPricing)
+router.patch('/:id/pricing/respond', requireRole(ROLES.USER), validate(respondPricingSchema), workOrderController.respondWorkOrderPricing)
+router.post('/:id/invoice', requireRole(ROLES.ADMIN), validate(workOrderInvoiceSchema), workOrderController.invoiceWorkOrder)
 
 router.post(
   '/:id/updates',

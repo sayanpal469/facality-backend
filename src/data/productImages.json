@@ -1,0 +1,634 @@
+{
+  "BMS-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Maxdetect_Humidity_and_Temperature_Sensor_-_RHT03_10167.jpg/500px-Maxdetect_Humidity_and_Temperature_Sensor_-_RHT03_10167.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Maxdetect_Humidity_and_Temperature_Sensor_-_RHT03_10167.jpg"
+  },
+  "BMS-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/%D0%91%D0%B0%D0%BB%D1%85%D0%B0%D1%88-9%2C_%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA_%D0%B4%D1%8B%D0%BC%D0%B0.jpg/500px-%D0%91%D0%B0%D0%BB%D1%85%D0%B0%D1%88-9%2C_%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA_%D0%B4%D1%8B%D0%BC%D0%B0.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D0%BB%D1%85%D0%B0%D1%88-9,_%D0%B4%D0%B0%D1%82%D1%87%D0%B8%D0%BA_%D0%B4%D1%8B%D0%BC%D0%B0.jpg"
+  },
+  "BMS-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/2023_Czujnik_temperatury_i_wilgotno%C5%9Bci_Xiaomi_%282%29.jpg/500px-2023_Czujnik_temperatury_i_wilgotno%C5%9Bci_Xiaomi_%282%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2023_Czujnik_temperatury_i_wilgotno%C5%9Bci_Xiaomi_(2).jpg"
+  },
+  "BMS-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/PLC_Relay_module_Internal_circuit.jpg/500px-PLC_Relay_module_Internal_circuit.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PLC_Relay_module_Internal_circuit.jpg"
+  },
+  "BMS-005": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/RFID_card.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RFID_card.jpg"
+  },
+  "BMS-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/12V_VRLA_Battery.jpg/500px-12V_VRLA_Battery.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:12V_VRLA_Battery.jpg"
+  },
+  "BMS-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Bc105_thermostat_front_view.png/500px-Bc105_thermostat_front_view.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Bc105_thermostat_front_view.png"
+  },
+  "BMS-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Sure-Lites_emergency_exit_light_2.jpg/500px-Sure-Lites_emergency_exit_light_2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sure-Lites_emergency_exit_light_2.jpg"
+  },
+  "CLN-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Calcium_hypochlorite.png/500px-Calcium_hypochlorite.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Calcium_hypochlorite.png"
+  },
+  "CLN-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Blue_bucket_with_Bruce_hardwood_floor_cleaner.jpg/500px-Blue_bucket_with_Bruce_hardwood_floor_cleaner.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Blue_bucket_with_Bruce_hardwood_floor_cleaner.jpg"
+  },
+  "CLN-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/ToiletcleanersbyAlofok_%284%29.JPG/500px-ToiletcleanersbyAlofok_%284%29.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:ToiletcleanersbyAlofok_(4).JPG"
+  },
+  "CLN-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Windex_%2848089717956%29.jpg/500px-Windex_%2848089717956%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Windex_(48089717956).jpg"
+  },
+  "CLN-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Microfibre_cloth.jpg/500px-Microfibre_cloth.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Microfibre_cloth.jpg"
+  },
+  "CLN-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Mop_and_bucket%2C_7-Eleven.jpg/500px-Mop_and_bucket%2C_7-Eleven.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mop_and_bucket,_7-Eleven.jpg"
+  },
+  "CLN-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Black_garbage_bag.jpg/500px-Black_garbage_bag.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Black_garbage_bag.jpg"
+  },
+  "CLN-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Klobuersten_%28fcm%29.jpg/500px-Klobuersten_%28fcm%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Klobuersten_(fcm).jpg"
+  },
+  "CLN-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Aerosol_spray_top_luxrender_%28with_numbers%29.png/500px-Aerosol_spray_top_luxrender_%28with_numbers%29.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerosol_spray_top_luxrender_(with_numbers).png"
+  },
+  "CLN-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Lysol-ad-2.jpg/500px-Lysol-ad-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lysol-ad-2.jpg"
+  },
+  "CLN-011": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Wall-mounted_manual_liquid_soap_dispenser_with_chrome_finish.jpg/500px-Wall-mounted_manual_liquid_soap_dispenser_with_chrome_finish.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall-mounted_manual_liquid_soap_dispenser_with_chrome_finish.jpg"
+  },
+  "CLN-012": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Bus_cleaning_trolley%2C_Belfast_-_geograph.org.uk_-_8192585.jpg/500px-Bus_cleaning_trolley%2C_Belfast_-_geograph.org.uk_-_8192585.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bus_cleaning_trolley,_Belfast_-_geograph.org.uk_-_8192585.jpg"
+  },
+  "CLN-013": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/1_liter_trigger_spray_bottle.jpg/500px-1_liter_trigger_spray_bottle.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:1_liter_trigger_spray_bottle.jpg"
+  },
+  "CLN-014": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Stacked_rolls_of_toilet_paper%2C_Tunnicliff%27s_Tavern.jpg/500px-Stacked_rolls_of_toilet_paper%2C_Tunnicliff%27s_Tavern.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Stacked_rolls_of_toilet_paper,_Tunnicliff%27s_Tavern.jpg"
+  },
+  "CLN-015": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Apron_%28protective_wear%29.jpg/500px-Apron_%28protective_wear%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apron_(protective_wear).jpg"
+  },
+  "CLN-016": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Afwasmiddel_Una_Aldi.JPG/500px-Afwasmiddel_Una_Aldi.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Afwasmiddel_Una_Aldi.JPG"
+  },
+  "CLN-017": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Sponge_Macro.jpg/500px-Sponge_Macro.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sponge_Macro.jpg"
+  },
+  "CLN-018": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Hand_sanitizer_in_Bangkok_in_March_2020_-_1.jpg/500px-Hand_sanitizer_in_Bangkok_in_March_2020_-_1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hand_sanitizer_in_Bangkok_in_March_2020_-_1.jpg"
+  },
+  "DG-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Gulflube_dewaxed_motor_oil_can_pic1.JPG/500px-Gulflube_dewaxed_motor_oil_can_pic1.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Gulflube_dewaxed_motor_oil_can_pic1.JPG"
+  },
+  "DG-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Engine_oil_filter_cutaway.JPG/500px-Engine_oil_filter_cutaway.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Engine_oil_filter_cutaway.JPG"
+  },
+  "DG-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Oil_filter_and_Fuel_filter_of_UD_Trucks%2C.jpg/500px-Oil_filter_and_Fuel_filter_of_UD_Trucks%2C.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Oil_filter_and_Fuel_filter_of_UD_Trucks,.jpg"
+  },
+  "DG-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Dirty-air-filter.jpg/500px-Dirty-air-filter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dirty-air-filter.jpg"
+  },
+  "DG-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D1%82%D0%B8%D1%84%D1%80%D0%B8%D0%B7._%D0%A4%D0%BE%D1%82%D0%BE_%D0%90._%D0%A9%D0%B5%D0%BA%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0.jpg/500px-%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D1%82%D0%B8%D1%84%D1%80%D0%B8%D0%B7._%D0%A4%D0%BE%D1%82%D0%BE_%D0%90._%D0%A9%D0%B5%D0%BA%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BD%D1%82%D0%B8%D1%84%D1%80%D0%B8%D0%B7._%D0%A4%D0%BE%D1%82%D0%BE_%D0%90._%D0%A9%D0%B5%D0%BA%D0%B8%D0%BD%D0%BE%D0%B2%D0%B0.jpg"
+  },
+  "DG-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Remy_charg-o-matic_car_battery.jpg/500px-Remy_charg-o-matic_car_battery.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Remy_charg-o-matic_car_battery.jpg"
+  },
+  "DG-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Graphite_grease_-_%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%BC%D0%B0%D0%B7%D0%BA%D0%B0.jpg/500px-Graphite_grease_-_%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%BC%D0%B0%D0%B7%D0%BA%D0%B0.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Graphite_grease_-_%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%BC%D0%B0%D0%B7%D0%BA%D0%B0.jpg"
+  },
+  "DG-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Sterile_distilled_water_01.JPG/500px-Sterile_distilled_water_01.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Sterile_distilled_water_01.JPG"
+  },
+  "ELE-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/LED_bulbs.jpg/500px-LED_bulbs.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:LED_bulbs.jpg"
+  },
+  "ELE-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/LED_tubes_in_various_length.JPG/500px-LED_tubes_in_various_length.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:LED_tubes_in_various_length.JPG"
+  },
+  "ELE-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Circuit_breaker_2_pole_on_DIN_rail.JPG/500px-Circuit_breaker_2_pole_on_DIN_rail.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Circuit_breaker_2_pole_on_DIN_rail.JPG"
+  },
+  "ELE-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Blue_Grass_Chemical_Agent-Destruction_Pilot_Plant_Electrical_Cable_Reels_%284706172583%29.jpg/500px-Blue_Grass_Chemical_Agent-Destruction_Pilot_Plant_Electrical_Cable_Reels_%284706172583%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Blue_Grass_Chemical_Agent-Destruction_Pilot_Plant_Electrical_Cable_Reels_(4706172583).jpg"
+  },
+  "ELE-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Electrical-tape_black.jpg/500px-Electrical-tape_black.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Electrical-tape_black.jpg"
+  },
+  "ELE-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Switches_20201003_110916.jpg/500px-Switches_20201003_110916.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Switches_20201003_110916.jpg"
+  },
+  "ELE-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Power_strips_with_extension_cord.jpg/500px-Power_strips_with_extension_cord.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Power_strips_with_extension_cord.jpg"
+  },
+  "ELE-008": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/JVC_MX-J950R_-_power_module-1112_%28cropped%29_-_Elna_Silmic_electrolytic_capacitors.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:JVC_MX-J950R_-_power_module-1112_(cropped)_-_Elna_Silmic_electrolytic_capacitors.jpg"
+  },
+  "ELE-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/2017_Cyfrowy_miernik_uniwersalny.jpg/500px-2017_Cyfrowy_miernik_uniwersalny.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2017_Cyfrowy_miernik_uniwersalny.jpg"
+  },
+  "ELE-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Screwdriver_test_light.jpg/500px-Screwdriver_test_light.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Screwdriver_test_light.jpg"
+  },
+  "GDN-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Compost_pile.JPG/500px-Compost_pile.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Compost_pile.JPG"
+  },
+  "GDN-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/DAP_%28Diammonium_Phosphate%29_Granules_%283%29.jpg/500px-DAP_%28Diammonium_Phosphate%29_Granules_%283%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:DAP_(Diammonium_Phosphate)_Granules_(3).jpg"
+  },
+  "GDN-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Melnor_Garden_Hose_Water_Nozzle_5_LR.jpg/500px-Melnor_Garden_Hose_Water_Nozzle_5_LR.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Melnor_Garden_Hose_Water_Nozzle_5_LR.jpg"
+  },
+  "GDN-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Langenlois_Weinweg_Installation_Weingartenschere-8276.jpg/500px-Langenlois_Weinweg_Installation_Weingartenschere-8276.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Langenlois_Weinweg_Installation_Weingartenschere-8276.jpg"
+  },
+  "GDN-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Pushmower1.JPG/500px-Pushmower1.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Pushmower1.JPG"
+  },
+  "GDN-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Seed_packets_being_filled.png/500px-Seed_packets_being_filled.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Seed_packets_being_filled.png"
+  },
+  "GDN-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Germination_of_neem_seed.jpg/500px-Germination_of_neem_seed.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Germination_of_neem_seed.jpg"
+  },
+  "GDN-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Many_colorful_flowerpots_in_front_of_Bulguksa_temple_in_Gyeongju_South_Korea.jpg/500px-Many_colorful_flowerpots_in_front_of_Bulguksa_temple_in_Gyeongju_South_Korea.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Many_colorful_flowerpots_in_front_of_Bulguksa_temple_in_Gyeongju_South_Korea.jpg"
+  },
+  "GDN-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/A_leaf_rake.jpg/500px-A_leaf_rake.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_leaf_rake.jpg"
+  },
+  "GDN-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Potting_soils_-_Cottismore_Garden_Centre_-_geograph.org.uk_-_5344894.jpg/500px-Potting_soils_-_Cottismore_Garden_Centre_-_geograph.org.uk_-_5344894.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Potting_soils_-_Cottismore_Garden_Centre_-_geograph.org.uk_-_5344894.jpg"
+  },
+  "GDN-011": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Impact_Sprinkler_Mechanism_2.jpg/500px-Impact_Sprinkler_Mechanism_2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Impact_Sprinkler_Mechanism_2.jpg"
+  },
+  "GDN-012": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Woman_with_watering_can%2C_Dent_de_Man.jpg/500px-Woman_with_watering_can%2C_Dent_de_Man.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Woman_with_watering_can,_Dent_de_Man.jpg"
+  },
+  "GDN-013": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/My_trusty_gardening_gloves_%26_secateurs_which_need_a_good_clean_by_the_look_of_them_%288711272274%29.jpg/500px-My_trusty_gardening_gloves_%26_secateurs_which_need_a_good_clean_by_the_look_of_them_%288711272274%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:My_trusty_gardening_gloves_%26_secateurs_which_need_a_good_clean_by_the_look_of_them_(8711272274).jpg"
+  },
+  "GDN-014": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Electric_hedge_trimmer_and_partly_trimmed_hedge.jpg/500px-Electric_hedge_trimmer_and_partly_trimmed_hedge.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Electric_hedge_trimmer_and_partly_trimmed_hedge.jpg"
+  },
+  "GDN-015": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Grass_seed_1.jpg/500px-Grass_seed_1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Grass_seed_1.jpg"
+  },
+  "GDN-016": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Knapsack_sprayer.jpg/500px-Knapsack_sprayer.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Knapsack_sprayer.jpg"
+  },
+  "GEN-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Puma_White_Knit_Gloves.jpg/500px-Puma_White_Knit_Gloves.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Puma_White_Knit_Gloves.jpg"
+  },
+  "GEN-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Coiled_rope_03235.jpg/500px-Coiled_rope_03235.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Coiled_rope_03235.jpg"
+  },
+  "GEN-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Lime_green_bucket_4.jpg/500px-Lime_green_bucket_4.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lime_green_bucket_4.jpg"
+  },
+  "GEN-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/OXO_Dust_Brush_and_Pan.jpg/500px-OXO_Dust_Brush_and_Pan.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:OXO_Dust_Brush_and_Pan.jpg"
+  },
+  "GEN-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/TRA_Bento_corrugated_box_20200718.jpg/500px-TRA_Bento_corrugated_box_20200718.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:TRA_Bento_corrugated_box_20200718.jpg"
+  },
+  "GEN-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Ladder_aluminum.jpg/500px-Ladder_aluminum.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ladder_aluminum.jpg"
+  },
+  "GEN-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Orange_hand_truck_pulling_a_variety_of_blue_cartons.jpg/500px-Orange_hand_truck_pulling_a_variety_of_blue_cartons.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Orange_hand_truck_pulling_a_variety_of_blue_cartons.jpg"
+  },
+  "GEN-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Kabelbinder_--_2024_--_6917.jpg/500px-Kabelbinder_--_2024_--_6917.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kabelbinder_--_2024_--_6917.jpg"
+  },
+  "GEN-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Giant_tarpaulin_covering_a_road_under_construction_at_sunrise_with_a_colorful_sky_in_Don_Det_Laos.jpg/500px-Giant_tarpaulin_covering_a_road_under_construction_at_sunrise_with_a_colorful_sky_in_Don_Det_Laos.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Giant_tarpaulin_covering_a_road_under_construction_at_sunrise_with_a_colorful_sky_in_Don_Det_Laos.jpg"
+  },
+  "GEN-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Flashlight.jpg/500px-Flashlight.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Flashlight.jpg"
+  },
+  "GEN-011": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Claw_hammer_2.jpg/500px-Claw_hammer_2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Claw_hammer_2.jpg"
+  },
+  "GEN-012": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/B%26Q_Tape_Measure.jpg/500px-B%26Q_Tape_Measure.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:B%26Q_Tape_Measure.jpg"
+  },
+  "GEN-013": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Crowbar_without_haft.jpg/500px-Crowbar_without_haft.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Crowbar_without_haft.jpg"
+  },
+  "GEN-014": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Shovel-Cyclone-BD-2015-2.JPG/500px-Shovel-Cyclone-BD-2015-2.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Shovel-Cyclone-BD-2015-2.JPG"
+  },
+  "GEN-015": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Wheelbarrows_to_loan_at_Waldfriedhof_M%C3%BCnchen_01.jpg/500px-Wheelbarrows_to_loan_at_Waldfriedhof_M%C3%BCnchen_01.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wheelbarrows_to_loan_at_Waldfriedhof_M%C3%BCnchen_01.jpg"
+  },
+  "OFF-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/15_reams_of_paper_stacked_on_the_floor.jpg/500px-15_reams_of_paper_stacked_on_the_floor.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:15_reams_of_paper_stacked_on_the_floor.jpg"
+  },
+  "OFF-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Macro_Biro_writing2.jpg/500px-Macro_Biro_writing2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Macro_Biro_writing2.jpg"
+  },
+  "OFF-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/2017_Zszywacz_biurowy.jpg/500px-2017_Zszywacz_biurowy.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2017_Zszywacz_biurowy.jpg"
+  },
+  "OFF-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/File_folders_3_2014-12-14.JPG/500px-File_folders_3_2014-12-14.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:File_folders_3_2014-12-14.JPG"
+  },
+  "OFF-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Sticky_Note_on_a_white_background.jpg/500px-Sticky_Note_on_a_white_background.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sticky_Note_on_a_white_background.jpg"
+  },
+  "OFF-006": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Box_Sealing_Tape_Large_Roll.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Box_Sealing_Tape_Large_Roll.jpg"
+  },
+  "OFF-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/A_tissue_box.jpg/500px-A_tissue_box.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_tissue_box.jpg"
+  },
+  "OFF-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/%D0%9A%D0%B0%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0.png/500px-%D0%9A%D0%B0%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0.png",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%81%D1%81%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0.png"
+  },
+  "OFF-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Closeup_of_black_umbrella_in_rain.jpg/500px-Closeup_of_black_umbrella_in_rain.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Closeup_of_black_umbrella_in_rain.jpg"
+  },
+  "OFF-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Rubber_bands_-_Colors_-_Studio_photo_2011.jpg/500px-Rubber_bands_-_Colors_-_Studio_photo_2011.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rubber_bands_-_Colors_-_Studio_photo_2011.jpg"
+  },
+  "OFF-011": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/FABER-CASTELL_glue_stick.jpg/500px-FABER-CASTELL_glue_stick.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:FABER-CASTELL_glue_stick.jpg"
+  },
+  "OFF-012": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/500px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pair_of_scissors_with_black_handle,_2015-06-07.jpg"
+  },
+  "OFF-013": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Permanent_ink_marker_-_chisel_tip.jpg/500px-Permanent_ink_marker_-_chisel_tip.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Permanent_ink_marker_-_chisel_tip.jpg"
+  },
+  "OFF-014": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Briefumschlag_%28fcm%29.jpg/500px-Briefumschlag_%28fcm%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Briefumschlag_(fcm).jpg"
+  },
+  "OFF-015": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Wood-clipboard.jpg/500px-Wood-clipboard.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wood-clipboard.jpg"
+  },
+  "PAN-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Teebeutel_Polylactid_2009.jpg/500px-Teebeutel_Polylactid_2009.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Teebeutel_Polylactid_2009.jpg"
+  },
+  "PAN-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Instant_Coffee_In_a_Glass_Jar.jpg/500px-Instant_Coffee_In_a_Glass_Jar.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Instant_Coffee_In_a_Glass_Jar.jpg"
+  },
+  "PAN-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Sugar_on_a_blue_plate_%28close_up%29.jpg/500px-Sugar_on_a_blue_plate_%28close_up%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sugar_on_a_blue_plate_(close_up).jpg"
+  },
+  "PAN-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Paper_Cups_-_isolated.png/500px-Paper_Cups_-_isolated.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Paper_Cups_-_isolated.png"
+  },
+  "PAN-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/2023_Czajnik_elektryczny_N%27OVEEN.jpg/500px-2023_Czajnik_elektryczny_N%27OVEEN.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2023_Czajnik_elektryczny_N%27OVEEN.jpg"
+  },
+  "PAN-006": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/PowderedMilk.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PowderedMilk.jpg"
+  },
+  "PAN-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Loaded_Tea_Tray_%287610014554%29.jpg/500px-Loaded_Tea_Tray_%287610014554%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Loaded_Tea_Tray_(7610014554).jpg"
+  },
+  "PAN-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Water_cooler_bottle_ignition.jpg/500px-Water_cooler_bottle_ignition.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Water_cooler_bottle_ignition.jpg"
+  },
+  "PLB-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/PVC_pipes%2C_Reaghan_-_geograph.org.uk_-_6579844.jpg/500px-PVC_pipes%2C_Reaghan_-_geograph.org.uk_-_6579844.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PVC_pipes,_Reaghan_-_geograph.org.uk_-_6579844.jpg"
+  },
+  "PLB-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/PTFE_tape.jpg/500px-PTFE_tape.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PTFE_tape.jpg"
+  },
+  "PLB-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Pipe_Wrench.jpg/500px-Pipe_Wrench.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pipe_Wrench.jpg"
+  },
+  "PLB-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Wasserhahn.jpg/500px-Wasserhahn.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wasserhahn.jpg"
+  },
+  "PLB-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Ball_Valve.jpg/500px-Ball_Valve.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ball_Valve.jpg"
+  },
+  "PLB-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Epoxy_putty.jpg/500px-Epoxy_putty.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Epoxy_putty.jpg"
+  },
+  "PLB-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Evolity_Stahlflex_Bremsleitung.jpg/500px-Evolity_Stahlflex_Bremsleitung.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Evolity_Stahlflex_Bremsleitung.jpg"
+  },
+  "PLB-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Shower_2_Belgium.jpg/500px-Shower_2_Belgium.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Shower_2_Belgium.jpg"
+  },
+  "PLB-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Sulfuric_Acid_Drain_Cleaner.jpg/500px-Sulfuric_Acid_Drain_Cleaner.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sulfuric_Acid_Drain_Cleaner.jpg"
+  },
+  "PLB-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Glue_primer_and.jpg/500px-Glue_primer_and.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Glue_primer_and.jpg"
+  },
+  "SAF-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Nitrile_Gloves_holder_20230316_110111.jpg/500px-Nitrile_Gloves_holder_20230316_110111.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nitrile_Gloves_holder_20230316_110111.jpg"
+  },
+  "SAF-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/A_surgical_mask_%282017%29.jpg/500px-A_surgical_mask_%282017%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_surgical_mask_(2017).jpg"
+  },
+  "SAF-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Wet_floor_caution_sugn.jpg/500px-Wet_floor_caution_sugn.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wet_floor_caution_sugn.jpg"
+  },
+  "SAF-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Cologne_Germany_Safety-helmet-with-headset-01.jpg/500px-Cologne_Germany_Safety-helmet-with-headset-01.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cologne_Germany_Safety-helmet-with-headset-01.jpg"
+  },
+  "SAF-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/S3_safety_footwear.jpg/500px-S3_safety_footwear.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:S3_safety_footwear.jpg"
+  },
+  "SAF-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/High-visibility_vest.jpg/500px-High-visibility_vest.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:High-visibility_vest.jpg"
+  },
+  "SAF-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Safety_Goggles.jpg/500px-Safety_Goggles.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Safety_Goggles.jpg"
+  },
+  "SAF-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Butyl_rubber_gloves.JPG/500px-Butyl_rubber_gloves.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Butyl_rubber_gloves.JPG"
+  },
+  "SAF-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Venedig_Acqua_alta_Rubber_Boots-6375.jpg/500px-Venedig_Acqua_alta_Rubber_Boots-6375.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Venedig_Acqua_alta_Rubber_Boots-6375.jpg"
+  },
+  "SAF-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Erste_Hilfe_003_2026_02_17.jpg/500px-Erste_Hilfe_003_2026_02_17.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Erste_Hilfe_003_2026_02_17.jpg"
+  },
+  "SAF-011": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Traffic_cones_london.jpg/500px-Traffic_cones_london.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Traffic_cones_london.jpg"
+  },
+  "SAF-012": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Red_Fire_Extinguisher.jpg/500px-Red_Fire_Extinguisher.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Red_Fire_Extinguisher.jpg"
+  },
+  "SAF-013": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Lockout_Station_at_National_Synchrotron_Light_Source_II.jpg/500px-Lockout_Station_at_National_Synchrotron_Light_Source_II.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lockout_Station_at_National_Synchrotron_Light_Source_II.jpg"
+  },
+  "SEC-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/CCTV_dome_camera_subway_Rotterdam.jpg/500px-CCTV_dome_camera_subway_Rotterdam.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:CCTV_dome_camera_subway_Rotterdam.jpg"
+  },
+  "SEC-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Campion-CCTV-Camera-CN-7611HS.jpg/500px-Campion-CCTV-Camera-CN-7611HS.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Campion-CCTV-Camera-CN-7611HS.jpg"
+  },
+  "SEC-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Panasonic_HDD_and_DVD_video_recorder_DMR-EH56.jpg/500px-Panasonic_HDD_and_DVD_video_recorder_DMR-EH56.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Panasonic_HDD_and_DVD_video_recorder_DMR-EH56.jpg"
+  },
+  "SEC-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Seagate_ST33232A_hard_disk_inner_view.jpg/500px-Seagate_ST33232A_hard_disk_inner_view.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Seagate_ST33232A_hard_disk_inner_view.jpg"
+  },
+  "SEC-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Coaxial_cable_cut.jpg/500px-Coaxial_cable_cut.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Coaxial_cable_cut.jpg"
+  },
+  "SEC-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/BNC_connector.jpg/500px-BNC_connector.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:BNC_connector.jpg"
+  },
+  "SEC-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Switch_Mode_Power_Supply_.jpg/500px-Switch_Mode_Power_Supply_.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Switch_Mode_Power_Supply_.jpg"
+  },
+  "SEC-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Ethernet_socket_with_two_cables_connected_%28TIA-568B%29_%28CAT6%29.jpg/500px-Ethernet_socket_with_two_cables_connected_%28TIA-568B%29_%28CAT6%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ethernet_socket_with_two_cables_connected_(TIA-568B)_(CAT6).jpg"
+  },
+  "SEC-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/2550T-PWR-Front.jpg/500px-2550T-PWR-Front.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2550T-PWR-Front.jpg"
+  },
+  "TLS-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Socket_wrench_and_sockets.JPG/500px-Socket_wrench_and_sockets.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Socket_wrench_and_sockets.JPG"
+  },
+  "TLS-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Clampmeter_Fluke_337.jpg/500px-Clampmeter_Fluke_337.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Clampmeter_Fluke_337.jpg"
+  },
+  "TLS-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Infrared_thermometer_%28Innovo%29.jpg/500px-Infrared_thermometer_%28Innovo%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Infrared_thermometer_(Innovo).jpg"
+  },
+  "TLS-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Handheld_laser_distance_meter.jpg/500px-Handheld_laser_distance_meter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Handheld_laser_distance_meter.jpg"
+  },
+  "TLS-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Head_Lamp_Petzl_e%2BLite_with_case.jpg/500px-Head_Lamp_Petzl_e%2BLite_with_case.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Head_Lamp_Petzl_e%2BLite_with_case.jpg"
+  },
+  "TLS-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Baofeng_UV-5R_transceiver.jpg/500px-Baofeng_UV-5R_transceiver.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Baofeng_UV-5R_transceiver.jpg"
+  },
+  "TLS-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Warbler_Whistle_%28Plastic%29.jpg/500px-Warbler_Whistle_%28Plastic%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Warbler_Whistle_(Plastic).jpg"
+  },
+  "TLS-008": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Lanyard_%283379981636%29_%284%29.jpg/500px-Lanyard_%283379981636%29_%284%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lanyard_(3379981636)_(4).jpg"
+  },
+  "TLS-009": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Blank_whiteboard.JPG/500px-Blank_whiteboard.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Blank_whiteboard.JPG"
+  },
+  "TLS-010": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Megaphone_MET_C4491_89.4.3323.jpg/500px-Megaphone_MET_C4491_89.4.3323.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Megaphone_MET_C4491_89.4.3323.jpg"
+  },
+  "TLS-011": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Brass_padlock%2C_inscribed_%22secure_lock%22.jpg/500px-Brass_padlock%2C_inscribed_%22secure_lock%22.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Brass_padlock,_inscribed_%22secure_lock%22.jpg"
+  },
+  "TLS-012": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Photoluminescent_Exit_Sign.jpg/500px-Photoluminescent_Exit_Sign.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Photoluminescent_Exit_Sign.jpg"
+  },
+  "TLS-013": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Air_Purifier_%28Levoit_LV-H133%29_%2849317867758%29.jpg/500px-Air_Purifier_%28Levoit_LV-H133%29_%2849317867758%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Air_Purifier_(Levoit_LV-H133)_(49317867758).jpg"
+  },
+  "TLS-014": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Luxembourg%2C_different_caution_tapes.jpg/500px-Luxembourg%2C_different_caution_tapes.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Luxembourg,_different_caution_tapes.jpg"
+  },
+  "WTR-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Alum.jpg/500px-Alum.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Alum.jpg"
+  },
+  "WTR-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/US_Navy_100727-N-7280V-403_Hospital_Corpsman_2nd_Class_Jenna_Nowaczyk%2C_left%2C_and_Hospital_Corpsman_1st_Class_Lee_Cortez_check_chlorine_tablets_at_a_local_well.jpg/500px-thumbnail.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:US_Navy_100727-N-7280V-403_Hospital_Corpsman_2nd_Class_Jenna_Nowaczyk,_left,_and_Hospital_Corpsman_1st_Class_Lee_Cortez_check_chlorine_tablets_at_a_local_well.jpg"
+  },
+  "WTR-003": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Universal_indicator_paper_for_the_measurement_of_acidity_or_alkalinity_%28pH_indicator%29.jpg/500px-Universal_indicator_paper_for_the_measurement_of_acidity_or_alkalinity_%28pH_indicator%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Universal_indicator_paper_for_the_measurement_of_acidity_or_alkalinity_(pH_indicator).jpg"
+  },
+  "WTR-004": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Cartridge_filter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cartridge_filter.jpg"
+  },
+  "WTR-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Reverse_osmosis_membrane_element_layers.jpg/500px-Reverse_osmosis_membrane_element_layers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Reverse_osmosis_membrane_element_layers.jpg"
+  },
+  "WTR-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Halit-kolejny.JPG/500px-Halit-kolejny.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Halit-kolejny.JPG"
+  },
+  "WTR-007": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Tds-meter.jpg/500px-Tds-meter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tds-meter.jpg"
+  },
+  "WTR-008": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/EB1911_Water_Supply%2C_Sand-Filter_Bed.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:EB1911_Water_Supply,_Sand-Filter_Bed.jpg"
+  },
+  "WWT-001": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Activated_Sludge_2.png/500px-Activated_Sludge_2.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Activated_Sludge_2.png"
+  },
+  "WWT-002": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Lamella_clarifier_installation.jpg/500px-Lamella_clarifier_installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lamella_clarifier_installation.jpg"
+  },
+  "WWT-003": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Bleach-bottle.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bleach-bottle.jpg"
+  },
+  "WWT-004": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Calcium_hydroxide.jpg/500px-Calcium_hydroxide.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Calcium_hydroxide.jpg"
+  },
+  "WWT-005": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Aeration_tank_activated_sludge_process_STP_Bengaluru_India.jpg/500px-Aeration_tank_activated_sludge_process_STP_Bengaluru_India.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Aeration_tank_activated_sludge_process_STP_Bengaluru_India.jpg"
+  },
+  "WWT-006": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Dissolved_oxygen_meter.jpg/500px-Dissolved_oxygen_meter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dissolved_oxygen_meter.jpg"
+  }
+}

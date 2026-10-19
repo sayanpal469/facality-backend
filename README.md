@@ -31,6 +31,8 @@ cp .env.example .env      # already done for you in this repo
 npm run dev:memory        # instant — boots an in-process MongoDB, no install needed
 # or, against a real MongoDB (local install or Atlas):
 npm run seed               # one-time: creates the enterprise + admin + default services
+npm run seed:products      # product catalogue (~160, with images), service packages, delivery hub
+                           #   add `-- --demo` to also price 2 open work orders + 2 shop orders for the demo client
 npm run dev
 ```
 

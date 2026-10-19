@@ -123,3 +123,20 @@ export const updateOperations = asyncHandler(async function updateOperations(req
 
   return sendResponse(res, 200, toJSON(enterprise), 'Operations settings saved')
 })
+
+export const updateCommerce = asyncHandler(async function updateCommerce(req, res) {
+  const enterprise = await loadOwn(req)
+  for (const [key, value] of Object.entries(req.body)) enterprise.set(`commerce.${key}`, value)
+  await enterprise.save()
+
+  await logActivity({
+    enterpriseId: req.user.enterpriseId,
+    actorId: req.user._id,
+    action: 'updated store & delivery settings',
+    entityType: ACTIVITY_ENTITY_TYPE.SETTINGS,
+    entityId: enterprise._id,
+    entityLabel: enterprise.name,
+  })
+
+  return sendResponse(res, 200, toJSON(enterprise), 'Store & delivery settings saved')
+})
