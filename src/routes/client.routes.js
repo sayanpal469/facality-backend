@@ -22,6 +22,7 @@ router.get('/:id', requireRole(ROLES.ADMIN, ROLES.SUPERVISOR, ROLES.SITE_MANAGER
 router.patch('/:id', requireRole(ROLES.ADMIN), validate(updateClientSchema), clientController.updateClient)
 router.patch('/:id/status', requireRole(ROLES.ADMIN), validate(setClientStatusSchema), clientController.setClientStatus)
 router.patch('/:id/services', requireRole(ROLES.ADMIN), validate(updateClientServicesSchema), clientController.updateClientServices)
+router.get('/:id/credentials', requireRole(ROLES.ADMIN), clientController.getClientCredentials)
 router.post('/:id/reset-password', requireRole(ROLES.ADMIN), clientController.resetClientPassword)
 
 export default router

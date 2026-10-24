@@ -34,7 +34,7 @@ export const createClient = asyncHandler(async function createClient(req, res) {
       createdBy: req.user._id,
       mustChangePassword: true,
     })
-    user.password = temporaryPassword
+    user.issuePassword(temporaryPassword)
     await user.save()
     client.userId = user._id
     await client.save()
@@ -170,7 +170,7 @@ export const resetClientPassword = asyncHandler(async function resetClientPasswo
 
   const user = await User.findById(client.userId)
   const newPassword = crypto.randomBytes(6).toString('base64url')
-  user.password = newPassword
+  user.issuePassword(newPassword)
   user.mustChangePassword = true
   await user.save()
   await RefreshToken.updateMany({ userId: user._id, revokedAt: null }, { revokedAt: new Date() })
@@ -186,4 +186,23 @@ export const resetClientPassword = asyncHandler(async function resetClientPasswo
 
   const delivery = await sendCredentials(user, newPassword)
   return sendResponse(res, 200, { email: user.email, temporaryPassword: newPassword, delivery }, 'Password reset')
+})
+
+export const getClientCredentials = asyncHandler(async function getClientCredentials(req, res) {
+  const client = await Client.findOne({ _id: req.params.id, enterpriseId: req.user.enterpriseId })
+  if (!client) throw ApiError.notFound('Client not found')
+  if (!client.userId) return sendResponse(res, 200, null)
+
+  const user = await User.findById(client.userId).select('+issuedPasswordEnc')
+  if (!user) return sendResponse(res, 200, null)
+
+  // `password` is only known while the client still uses the admin-issued one;
+  // once they set their own it is bcrypt-only and can't be shown.
+  return sendResponse(res, 200, {
+    email: user.email,
+    password: user.readIssuedPassword(),
+    issuedAt: user.issuedPasswordAt,
+    mustChangePassword: user.mustChangePassword,
+    lastLoginAt: user.lastLoginAt,
+  })
 })

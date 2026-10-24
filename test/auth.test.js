@@ -21,6 +21,26 @@ describe('password login', () => {
   })
 })
 
+describe('client credentials (admin panel)', () => {
+  it('lets the admin read the issued password until the client sets their own', async () => {
+    const w = await makeWorld()
+    const path = `/clients/${w.client._id}/credentials`
+
+    const issued = (await api('GET', path, w.admin)).data
+    assert.equal(issued.email, w.clientEmail)
+    assert.equal(issued.password, w.clientPassword)
+    assert.equal((await api('GET', path, w.user)).status, 403)
+
+    const reset = (await api('POST', `/clients/${w.client._id}/reset-password`, w.admin)).data
+    assert.equal((await api('GET', path, w.admin)).data.password, reset.temporaryPassword)
+
+    const user = await login({ identifier: w.clientEmail, password: reset.temporaryPassword })
+    const changed = await api('POST', '/auth/change-password', user, { currentPassword: reset.temporaryPassword, newPassword: 'MyOwnPass1' })
+    assert.equal(changed.status, 200)
+    assert.equal((await api('GET', path, w.admin)).data.password, null)
+  })
+})
+
 describe('OTP login', () => {
   it('logs in with a single-use 6-digit code', async () => {
     const w = await makeWorld()

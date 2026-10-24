@@ -29,6 +29,9 @@ export const env = {
     refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '30d',
   },
 
+  // Encrypts admin-issued temporary passwords so they can be shown again in the admin panel.
+  credentialsSecret: process.env.CREDENTIALS_SECRET || process.env.JWT_ACCESS_SECRET || 'dev-credentials-secret',
+
   seed: {
     enterpriseName: process.env.SEED_ENTERPRISE_NAME || 'Demo Facility Enterprise',
     adminName: process.env.SEED_ADMIN_NAME || 'Admin',

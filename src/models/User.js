@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 import { ACCOUNT_STATUS_VALUES, ROLE_VALUES } from '../constants/enums.js'
+import { decryptSecret, encryptSecret } from '../utils/secretBox.js'
 
 const { Schema } = mongoose
 
@@ -23,6 +24,11 @@ const userSchema = new Schema(
     lastLoginAt: { type: Date, default: null },
     mustChangePassword: { type: Boolean, default: false },
 
+    // Encrypted copy of the temporary password an admin issued, so the admin
+    // panel can show it again. Cleared as soon as the password changes any other way.
+    issuedPasswordEnc: { type: String, default: null, select: false },
+    issuedPasswordAt: { type: Date, default: null },
+
     // Push opt-outs by topic (in-app notifications are always kept).
     pushPreferences: {
       workUpdates: { type: Boolean, default: true },
@@ -43,8 +49,21 @@ userSchema.virtual('password').set(function setPassword(plainPassword) {
   this.passwordHash = plainPassword // placeholder so isModified('passwordHash') triggers
 })
 
+// Sets an admin-issued password that stays readable to the admin until the user changes it.
+userSchema.methods.issuePassword = function issuePassword(plainPassword) {
+  this.password = plainPassword
+  this._issuedPassword = true
+}
+
+userSchema.methods.readIssuedPassword = function readIssuedPassword() {
+  return decryptSecret(this.issuedPasswordEnc)
+}
+
 userSchema.pre('save', async function hashPasswordIfChanged() {
   if (!this._plainPassword) return
+  this.issuedPasswordEnc = this._issuedPassword ? encryptSecret(this._plainPassword) : null
+  this.issuedPasswordAt = this._issuedPassword ? new Date() : null
+  this._issuedPassword = undefined
   this.passwordHash = await bcrypt.hash(this._plainPassword, 12)
   this._plainPassword = undefined
 })
@@ -56,6 +75,7 @@ userSchema.methods.comparePassword = function comparePassword(plainPassword) {
 userSchema.methods.toSafeJSON = function toSafeJSON() {
   const obj = this.toObject({ virtuals: true })
   delete obj.passwordHash
+  delete obj.issuedPasswordEnc
   delete obj.__v
   return obj
 }
